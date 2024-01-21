@@ -1,23 +1,12 @@
-// Start Variables
+// Start Global
 const toggleMenu = document.querySelector(".toggle-menu");
 const bullets = document.querySelectorAll(".bullets li");
 const backgroundChangeBtn = document.querySelectorAll(".background-change");
 const headerH2 = document.querySelector(".landing .content h2");
 const headerP = document.querySelector(".landing .content p");
-// End Variables
+// End Global
 
 // Start Header
-toggleMenu.onclick = () => {
-  toggleMenu.classList.toggle("toggle-active");
-};
-bullets.forEach((btn) => {
-  btn.onclick = () => {
-    bullets.forEach((btn) => {
-      btn.classList.remove("active");
-    });
-    btn.classList.add("active");
-  };
-});
 let landingContent = [
   {
     0: "Why Do You Choose Us",
@@ -35,6 +24,17 @@ let landingContent = [
   },
 ];
 let i = 1;
+toggleMenu.onclick = () => {
+  toggleMenu.classList.toggle("toggle-active");
+};
+bullets.forEach((btn) => {
+  btn.onclick = () => {
+    bullets.forEach((btn) => {
+      btn.classList.remove("active");
+    });
+    btn.classList.add("active");
+  };
+});
 backgroundChangeBtn[0].onclick = () => {
   i++;
   if (i === landingContent.length) {
