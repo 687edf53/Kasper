@@ -375,3 +375,64 @@ header nav .form i {
   top: 1px;
 }
 /* End Design */
+
+/* Start Portfolio */
+.portfolio {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+}
+.portfolio .shuffle {
+  display: flex;
+  justify-content: center;
+}
+.portfolio .shuffle li {
+  padding: 10px;
+  cursor: pointer
+}
+.portfolio .shuffle li.active {
+  background-color: var(--main-color);
+  color: white;
+}
+.portfolio .imgs-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 60px;
+}
+.portfolio .imgs-container .box {
+  position: relative;
+  overflow: hidden;
+}
+.portfolio .imgs-container .box .caption {
+  padding: 20px 0 20px 23px;
+  background-color: white;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+  transition: 0.2s;
+}
+.portfolio .imgs-container .box:hover .caption {
+  top: calc(206px - 86px);
+}
+.portfolio .imgs-container .box .caption h4 {
+  margin-bottom: 10px;
+  font-weight: normal;
+}
+.portfolio .imgs-container .box .caption p {
+  color: var(--main-color);
+}
+@media (min-width: 767px) {
+  .portfolio .imgs-container .box {
+    flex-basis: 50%;
+  }
+}
+@media (min-width: 1199px) {
+  .portfolio .imgs-container .box {
+    flex-basis: 25%;
+  }
+}
+.portfolio .imgs-container .box img {
+  max-width: 100%;
+}
+/* End Portfolio */

@@ -4,6 +4,9 @@ const bullets = document.querySelectorAll(".bullets li");
 const backgroundChangeBtn = document.querySelectorAll(".background-change");
 const headerH2 = document.querySelector(".landing .content h2");
 const headerP = document.querySelector(".landing .content p");
+const imgContainer = document.querySelector('.imgs-container');
+const imgContainerBoxes = document.querySelectorAll('.imgs-container .box');
+const shuffleLinks = document.querySelectorAll('.shuffle li');
 // End Global
 
 // Start Header
@@ -75,3 +78,27 @@ bullets.forEach((dot) => {
   };  
 });
 // End Header
+
+
+// Start Portfolio
+shuffleLinks.forEach(link => {
+  link.onclick = () => {
+    shuffleLinks.forEach(nestLink => {
+      nestLink.classList.remove("active");
+    })
+    link.classList.add("active");
+    let filteredBoxes = Array.from(imgContainerBoxes).filter((box) => {
+      if (box.children[1].children[1].innerHTML.includes(link.innerHTML)) {
+        return box.children[1].children[1].innerHTML.includes(link.innerHTML);
+      } else if (link.innerHTML === 'All') return box.children
+      else {
+        return null
+      }
+    });
+    imgContainer.innerHTML = "";
+    for(let i = 0; i < filteredBoxes.length; i++) {
+      imgContainer.appendChild(filteredBoxes[i]);
+    }
+  }
+})
+// End Portfolio
