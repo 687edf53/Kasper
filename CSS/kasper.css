@@ -413,7 +413,8 @@ header nav .form i {
   transition: 0.2s;
 }
 .portfolio .imgs-container .box:hover .caption {
-  top: calc(206px - 86px);
+  bottom: 0;
+  top: auto;
 }
 .portfolio .imgs-container .box .caption h4 {
   margin-bottom: 10px;
